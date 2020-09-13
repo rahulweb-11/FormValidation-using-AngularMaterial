@@ -1,0 +1,94 @@
+
+    <div class="note">
+        <p class="par">User Registration</p>
+    </div>
+    <mat-card>
+        <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              name="title"
+              ngModel
+              required
+              minlength="3"
+              placeholder="User Id"
+              #title="ngModel">
+            <mat-error *ngIf="title.invalid">Invalid User Id</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              name="title"
+              ngModel
+              required
+              minlength="3"
+              placeholder="First Name"
+              #title="ngModel">
+            <mat-error *ngIf="title.invalid">Please enter a First Name.</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              rows="4"
+              name="content"
+              ngModel
+              required
+              placeholder="Last Name"
+              #content="ngModel">
+            <mat-error *ngIf="content.invalid">Please enter a Last Name.</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              rows="4"
+              name="content"
+              ngModel
+              required
+              placeholder="Email Address"
+              #content="ngModel">
+            <mat-error *ngIf="content.invalid">Please enter a valid Email Address</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              rows="4"
+              name="content"
+              ngModel
+              required
+              placeholder="Phone No."
+              #content="ngModel">
+            <mat-error *ngIf="content.invalid">Please enter a Phone Number</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              rows="4"
+              name="content"
+              ngModel
+              required
+              placeholder="Pin Code"
+              #content="ngModel">
+            <mat-error *ngIf="content.invalid">Please enter a Pin Code.</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              rows="4"
+              name="content"
+              ngModel
+              required
+              placeholder="Address"
+              #content="ngModel">
+            <mat-error *ngIf="content.invalid">Please enter a Address</mat-error>
+          </mat-form-field>
+          <button
+            mat-raised-button
+            style="margin-left: 580px;
+            margin-top: 20px;"
+            color="primary"
+            type="submit">Submit</button>
+        </form>
+      </mat-card>
+   
