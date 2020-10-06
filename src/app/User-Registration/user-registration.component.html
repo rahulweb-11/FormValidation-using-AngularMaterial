@@ -1,94 +1,103 @@
-
-    <div class="note">
-        <p class="par">User Registration</p>
+<mat-card>
+<div class="note">
+        <p >User Registration</p>
     </div>
-    <mat-card>
+    <mat-card class="text-center">
         <form (submit)="onAddPost(postForm)" #postForm="ngForm">
           <mat-form-field>
             <input
               matInput
               type="text"
-              name="title"
-              ngModel
+              name="userId"
+              [(ngModel)]="userModel.CustomerId"
               required
+              userId
               minlength="3"
               placeholder="User Id"
-              #title="ngModel">
-            <mat-error *ngIf="title.invalid">Invalid User Id</mat-error>
+              #userId="ngModel">
+            <mat-error *ngIf="userId.invalid">Invalid User Id</mat-error>
           </mat-form-field>
           <mat-form-field>
             <input
               matInput
               type="text"
-              name="title"
-              ngModel
+              name="Fname"
+              [(ngModel)]="userModel.FirstName"
               required
               minlength="3"
               placeholder="First Name"
-              #title="ngModel">
-            <mat-error *ngIf="title.invalid">Please enter a First Name.</mat-error>
+              #Fname="ngModel">
+            <mat-error *ngIf="Fname.invalid">Please enter a First Name.</mat-error>
           </mat-form-field>
           <mat-form-field>
             <input
               matInput
-              rows="4"
-              name="content"
-              ngModel
+              name="Lname"
+              [(ngModel)]="userModel.LastName"
               required
+              Lname
+              minlength="3"
               placeholder="Last Name"
-              #content="ngModel">
-            <mat-error *ngIf="content.invalid">Please enter a Last Name.</mat-error>
+              #Lname="ngModel">
+            <mat-error *ngIf="Lname.invalid">Please enter a Last Name.</mat-error>
           </mat-form-field>
           <mat-form-field>
             <input
               matInput
               rows="4"
-              name="content"
-              ngModel
+              name="email"
+              [(ngModel)]="userModel.EmailId"
               required
+              email
               placeholder="Email Address"
-              #content="ngModel">
-            <mat-error *ngIf="content.invalid">Please enter a valid Email Address</mat-error>
+              #email="ngModel">
+            <mat-error *ngIf="!email.valid">Please enter a valid Email Address</mat-error>
           </mat-form-field>
           <mat-form-field>
             <input
               matInput
-              rows="4"
-              name="content"
-              ngModel
+              pattern="^\d{10}$"
+              name="Phone"
+              type="tel"
+              Phone
+              maxlength="10"
+              minlength="10"
+              [(ngModel)]="userModel.PhoneNo"
               required
               placeholder="Phone No."
-              #content="ngModel">
-            <mat-error *ngIf="content.invalid">Please enter a Phone Number</mat-error>
+              #Phone="ngModel">
+            <mat-error *ngIf="Phone.invalid">Please enter a Phone Number</mat-error>
           </mat-form-field>
           <mat-form-field>
             <input
               matInput
               rows="4"
-              name="content"
-              ngModel
+              name="Pin"
+              type="number"
+              [(ngModel)]="userModel.PinCode"
               required
               placeholder="Pin Code"
-              #content="ngModel">
-            <mat-error *ngIf="content.invalid">Please enter a Pin Code.</mat-error>
+              #Pin="ngModel">
+            <mat-error *ngIf="Pin.invalid">Please enter a Pin Code.</mat-error>
           </mat-form-field>
           <mat-form-field>
             <input
               matInput
-              rows="4"
-              name="content"
-              ngModel
+              name="Address"
+              [(ngModel)]="userModel.Address"
               required
+              Address
               placeholder="Address"
-              #content="ngModel">
-            <mat-error *ngIf="content.invalid">Please enter a Address</mat-error>
+              #Address="ngModel">
+            <mat-error *ngIf="Address.invalid">Please enter an Address</mat-error>
           </mat-form-field>
           <button
             mat-raised-button
-            style="margin-left: 580px;
-            margin-top: 20px;"
             color="primary"
-            type="submit">Submit</button>
+            style="margin-top: 20px;"
+            type="submit"
+            >Submit</button>
         </form>
       </mat-card>
-   
+    </mat-card>
+<!-------------------------------------->
