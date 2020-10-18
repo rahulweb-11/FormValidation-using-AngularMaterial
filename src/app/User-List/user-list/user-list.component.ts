@@ -1,7 +1,7 @@
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { UserRegisterService } from './../../service/user-register.service';
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -13,16 +13,32 @@ export class UserListComponent implements OnInit {
 
   public userData: any = [];
   
-  constructor(private userRegistrationService: UserRegisterService) { }
+  constructor(private userRegistrationService: UserRegisterService, private router: Router, private route: ActivatedRoute) { }
    
+  id = this.route.snapshot.paramMap.get("_id");
+ 
+  ngOnInit(): void {
+     
+     console.log(this.route.snapshot.paramMap);
+     console.log("Hello from user list")
 
-  ngOnInit() {
     this.userData = this.userRegistrationService.getUser()
-    .subscribe((response) => {
+   .subscribe((response) => {
       console.log(response)
-      const datas = JSON.stringify(response)
-      console.log(datas)
-      this.userData = JSON.parse(datas)
+      const data = JSON.stringify(response)
+      console.log(data)
+      this.userData = JSON.parse(data)
     });
+
+
+}
+    editUser(_id){
+      this.router.navigate(['/update', _id])
+      console.log(_id)
+    }
+  delete(_id){
+  this.userRegistrationService.deleteUser(_id);
+  console.log("userList", _id)
+  this.userRegistrationService.getUser()
   }
 }

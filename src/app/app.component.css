@@ -1,31 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Six+Caps&display=swap');
 body{
     margin: 0;
     padding: 0;
+    width: 100%;
     font-family: cursive;
-    background-color: rgba(241, 239, 145, 0.349);;
   }
   #header{
-    background-color: rgba(223, 221, 117, 0.514);
     margin: 0;
     padding: 0;
     box-shadow: 1px 1px 1px 1px rgba(128, 128, 128, 0.452);
+
   }
-  #social{
-    color: black;
+  .fa{
+    color: rgb(26, 26, 26);
+  }
+  #social {
+    color: rgb(54, 53, 53);
     font-size: 11px;
-    border-radius: 50%;
   }
   #top-nav{
     font-size: 10px;
     height: 20px;
-    color: black;
-    margin: 0;
-    padding: 0;
-    
   }
   .top-login{
     font-family: cursive;
-    color: black;
+    color: rgb(71, 71, 71);
   }
   .input-group.md-form.form-sm.form-2 input.lime-border {
     border: 1px solid #cddc39;
@@ -35,8 +34,11 @@ body{
   }
   
   .brand-logo{
-    height: 40px;
-    width: 70px;
+    font-family: 'Six Caps', sans-serif;
+    vertical-align: middle;
+    font-size: 52px;
+    letter-spacing: 5px;
+    text-shadow: 4px 4px rgb(102, 102, 102);
   }
   .fresh{
     color: green;

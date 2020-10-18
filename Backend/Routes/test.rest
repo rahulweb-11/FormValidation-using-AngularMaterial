@@ -1,0 +1,17 @@
+GET http://localhost:3000/api/users HTTP/1.1
+
+###
+
+POST http://localhost:3000/api/postUser HTTP/1.1
+header:  X-Http-Method-Override ;
+Content-Type: application/json;
+
+{
+    "CustomerId": 0000,
+    "FirstName": "anshan",
+    "LastName": "vdvsd",
+    "PhoneNo": "87898979",
+    "EmailId": "fgsuoghsdghshg",
+    "Address": "hjdkfhkd",
+    "PinCode": 2324
+}

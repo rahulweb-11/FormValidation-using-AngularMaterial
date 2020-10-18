@@ -19,7 +19,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
-  {path: 'signup', component: UserRegistrationComponent}
+  {path: 'userlist', component: UserListComponent},
+  {path: 'signup', component: UserRegistrationComponent},
+  {path: 'update/:_id', component: UserRegistrationComponent}
 ];
 
 @NgModule({
